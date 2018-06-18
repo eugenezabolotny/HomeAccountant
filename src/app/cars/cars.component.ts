@@ -9,17 +9,16 @@ export class CarsComponent implements OnInit {
 
   carName = '';
   carStatus = false;
-  cars = ['Ford', 'Audi', 'BMW'];
-  items = [
-    {id: 3, name: 'item 1'},
-    {id: 6, name: 'item 2'},
-    {id: 9, name: 'item 3'},
-  ];
+  cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lanos', 'Bentley'];
 
   addCar() {
     this.carStatus = true;
     this.cars.push(this.carName);
     this.carName = '';
+  }
+
+  setBigCarText(car: string) {
+    return car.length > 4;
   }
 
   constructor() {
