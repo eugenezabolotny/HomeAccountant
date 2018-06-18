@@ -8,22 +8,24 @@ import {Component, OnInit} from '@angular/core';
 export class CarsComponent implements OnInit {
 
   carName = '';
-  carStatus = false;
-  cars = ['Ford', 'Audi', 'BMW', 'Mazda', 'Lanos', 'Bentley'];
-  dates = [
-    new Date(2015, 3, 4),
-    new Date(2011, 2, 5),
-    new Date(2017, 4, 6),
-    new Date(2000, 1, 7),
+  carYear = 2017;
+
+  cars: [{name: string, year: number}] = [
+    {name: 'Ford', year: 2015},
+    {name: 'Audi', year: 2016},
+    {name: 'BMW', year: 2017},
+    {name: 'Mazda', year: 2018},
   ];
 
   constructor() {
   }
 
   addCar() {
-    this.carStatus = true;
-    this.cars.push(this.carName);
+    this.cars.push(
+      {name: this.carName, year: this.carYear}
+    );
     this.carName = '';
+    this.carYear = 2017;
   }
 
   ngOnInit() {
